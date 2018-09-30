@@ -2,7 +2,7 @@ package ua.skillsup.practice.springpractice.service;
 
 import ua.skillsup.practice.springpractice.exception.NoWeatherInfoException;
 import ua.skillsup.practice.springpractice.model.WeatherData;
-import ua.skillsup.practice.springpractice.repositpry.WeatherRepository;
+import ua.skillsup.practice.springpractice.repository.WeatherRepository;
 
 public class WeatherServiceImpl implements WeatherService {
 

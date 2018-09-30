@@ -1,4 +1,4 @@
-package ua.skillsup.practice.springpractice.repositpry;
+package ua.skillsup.practice.springpractice.repository;
 
 import ua.skillsup.practice.springpractice.model.WeatherData;
 
