@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import ua.skillsup.practice.springpractice.repository.RemoteWeatherRepository;
 import ua.skillsup.practice.springpractice.service.WeatherService;
 
@@ -13,6 +14,7 @@ import ua.skillsup.practice.springpractice.service.WeatherService;
 		@PropertySource("classpath:props/remote_repository.properties")
 })
 @SpringBootApplication
+@EnableScheduling
 public class SpringPracticeApplication {
 
 	public static void main(String[] args) {
