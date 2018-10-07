@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
+import ua.skillsup.practice.springpractice.config.Logged;
 import ua.skillsup.practice.springpractice.model.WeatherData;
 import ua.skillsup.practice.springpractice.repository.entity.RemoteWeatherData;
 import ua.skillsup.practice.springpractice.repository.entity.RemoteWeatherDetails;
@@ -27,6 +28,7 @@ public class RemoteWeatherRepository implements WeatherRepository {
 		this.url = url;
 	}
 
+	@Logged
 	@Override
 	public Optional<WeatherData> findWeatherByCity(String city) {
 		if (allowedCities.contains(city)) {

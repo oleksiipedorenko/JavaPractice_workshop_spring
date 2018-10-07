@@ -34,7 +34,7 @@ public class WeatherServiceImpl implements WeatherService {
 		this.city = city;
 	}
 
-	@Scheduled(cron = "*/60 * * * * *")
+	@Scheduled(cron = "*/30 * * * * *")
 	public void refreshCache() {
 		logger.info("Schedulled task executed!");
 		cache.put(city, requestWeatherData(city));
