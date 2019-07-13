@@ -1,14 +1,25 @@
 package ua.skillsup.practice.springpractice.repository;
 
+import org.springframework.stereotype.Repository;
 import ua.skillsup.practice.springpractice.model.WeatherData;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import javax.annotation.PostConstruct;
+import java.util.*;
 
+@Repository("localRepository")
 public class LocalWeatherRepository implements WeatherRepository {
 
 	private final Map<String, WeatherData> localData = new HashMap<>();
+
+	@PostConstruct
+	private void init() {
+		WeatherData dniproWeather =
+				new WeatherData(
+						"Dnipro",
+						22,
+						Collections.singleton("Sunny"));
+		localData.put(dniproWeather.getCity(), dniproWeather);
+	}
 
 	@Override
 	public Optional<WeatherData> findWeatherByCity(String city) {
